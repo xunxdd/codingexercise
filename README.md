@@ -3,7 +3,7 @@ A little coding exercise that fetches data through multiple ajax calls and displ
 
 # Lesson Learned
 
-1. I have been working with Ext js for a long time. Creating a Ext grid is a no-brainer. However, normally I use Ext buffered grid, which fetch data remotely. Working with
+1. I have worked with Ext js for a long time. Creating a Ext grid is a no-brainer. However, normally I use Ext buffered / infinite grid, which fetch data remotely and dynamically fetch data pages as user scrolls. Working with
 local json data and serve the store  from memory cache, surprisingly took me a bit longer than I expected.
 
 2. jQuery datatable is a delight. So easy, so light weighted. 
