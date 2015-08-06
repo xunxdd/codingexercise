@@ -1,0 +1,22 @@
+﻿.body {
+}
+
+.dataTables_length, .dataTables_filter {
+    display: none
+}
+
+.display-table {
+    width: 800px;
+    height: 800px;
+    font: 90%/1.45em "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+}
+
+.small {
+    font-size: 12px;
+}
+
+thead th.sorting_asc,
+thead th.sorting_desc,
+thead th.sorting {
+    background: #66A9BD;
+}

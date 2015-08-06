@@ -1,0 +1,38 @@
+﻿.x-grid-item, .x-grid-item-alt {
+    font: 12px "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+}
+
+.x-panel-header-default {
+    background: none;
+    border: none;
+}
+.x-grid-cell-inner {
+    overflow: hidden;
+    white-space: normal;
+}
+
+.x-panel-body-default {
+    border: none;
+}
+
+.x-panel-header-title {
+    margin: 10px 0;
+}
+
+.x-title-text a{
+    font-size: 12px;
+}
+
+.x-grid-item-alt {
+    background-color: aliceblue;
+}
+
+.x-column-header, .x-column-header-over {
+    font-weight: bold;
+    background-image: none;
+    background-color: #66A9BD;
+    min-height: 38px;
+    line-height: 28px;
+    text-align: center;
+}
+
