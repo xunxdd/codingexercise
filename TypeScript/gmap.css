@@ -43,3 +43,19 @@
     background: #F5F5F5;
     text-align: center;
 }
+
+.infoContainer{
+    position: relative;
+}
+
+.alert-info{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+}
+
+.glyphicon-info-sign{
+    color: red;
+    margin-right: 5px;
+}

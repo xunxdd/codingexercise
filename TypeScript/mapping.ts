@@ -53,11 +53,11 @@ module Mapping {
         }
         
         addHeatMapLayer(data, map){
-            var points: google.maps.Point[] = [];
+            var points: google.maps.LatLng[] = [];
             var devs: Array<IDeveloper> = data;
             
             devs.map((value)=> {
-                points.push(new google.maps.Point(value.latitude, value.longitude));
+                points.push(new google.maps.LatLng(value.latitude, value.longitude));
             });
 
             var heatmap = new google.maps.visualization.HeatmapLayer({
@@ -81,14 +81,15 @@ module Mapping {
                 'uruguay':'dev8.png'
             };
             var markers: google.maps.Marker[] = [];
-            
+ 
+            var bounds: google.maps.LatLngBounds = new google.maps.LatLngBounds();
             for (var i = devs.length - 1; i >= 0; i--) {
                 var dev = devs[i];
                 var img = iconMap[dev.icontype ] || 'dev.png';
-
-
+                var loc = new google.maps.LatLng(dev.latitude, dev.longitude);
+                bounds.extend(loc);
                 var opt: google.maps.MarkerOptions= {
-                    position: new google.maps.LatLng(dev.latitude, dev.longitude),
+                    position: loc,
                     map: map,
                     icon: 'images/' + img
                } ;
@@ -96,6 +97,7 @@ module Mapping {
                markers.push(marker);
              }
             
+             map.fitBounds(bounds);
              var clusterOption: MarkerClustererOptions = {
                  maxZoom:  4,
                  gridSize: 3

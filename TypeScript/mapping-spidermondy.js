@@ -15,67 +15,89 @@ var Mapping;
             //console.log(center);
             this.name = "GoogleMap";
             this.options = {
+                mapTypeId: google.maps.MapTypeId.SATELLITE,
                 center: { lat: center[0], lng: center[1] },
                 scrollwheel: false,
-                zoom: 2
+                zoom: 6
             };
             this.map = new google.maps.Map(mapDiv, this.options);
-            switch (type) {
-                case "heat":
-                    this.map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
-                    this.addHeatMapLayer(data, this.map);
-                    break;
-                default:
-                    this.makeMakers(data, this.map);
-                    break;
-            }
+            
+            this.oms=this.setUpOms(this.map);
+            this.makeMakers(data, this.map, this.oms);
         }
-        GoogleMap.prototype.addHeatMapLayer = function (data, map) {
-            var points = [];
-            var devs = data;
-            devs.map(function (value) {
-                points.push(new google.maps.LatLng(value.latitude, value.longitude));
+
+        GoogleMap.prototype.setUpOms= function(map){
+            var oms = new OverlappingMarkerSpiderfier(map, {
+                    circleSpiralSwitchover:0,
+                    keepSpiderfied:true,
+                    markersWontMove: true, 
+                    markersWontHide: true
+                }),
+                iw =new google.maps.InfoWindow(),
+                spiderfiedColor = 'ffee22',
+                usualColor = 'eebb22';
+            
+            oms.addListener('click', function(marker, event) {
+                iw.setContent(marker.desc);
+                iw.open(map, marker);
             });
-            var heatmap = new google.maps.visualization.HeatmapLayer({
-                data: points,
-                map: map
-            });
-        };
-        GoogleMap.prototype.makeMakers = function (data, map) {
+
+
+          oms.addListener('spiderfy', function(markers) {
+            for(var i = 0; i < markers.length; i ++) {
+              markers[i].setIcon(this.iconWithColor(spiderfiedColor));
+              markers[i].setShadow(null);
+            } 
+            iw.close();
+          });
+
+          oms.addListener('unspiderfy', function(markers) {
+            for(var i = 0; i < markers.length; i ++) {
+              markers[i].setIcon(this.iconWithColor(usualColor));
+              markers[i].setShadow(shadow);
+            }
+         });
+          
+          oms.addListener('spiderfy', function(markers) {
+                iw.close();
+           });
+           return oms;
+        }
+
+        GoogleMap.prototype.makeMakers = function (data, map, oms) {
             var devs = data;
-            var iconMap = {
-                'us-il': 'dev1.png',
-                'us-nc': 'dev2.png',
-                'us-ca': 'dev3.png',
-                'us-md': 'dev4.png',
-                'us-wa': 'dev9.png',
-                'uk': 'dev5.png',
-                'sweden': 'dev6.png',
-                'agentina': 'dev7.png',
-                'uruguay': 'dev8.png'
-            };
-            var markers = [];
-            var bounds = new google.maps.LatLngBounds();
+            var usualColor = 'eebb22';
+            var shadow = new google.maps.MarkerImage(
+               'https://www.google.com/intl/en_ALL/mapfiles/shadow50.png',
+               new google.maps.Size(60, 60),  // size   - for sprite clipping
+               new google.maps.Point(0, 0),   // origin - ditto
+               new google.maps.Point(10, 34)  // anchor - where to meet map location
+            ),
+            bounds = new google.maps.LatLngBounds();
+            
             for (var i = devs.length - 1; i >= 0; i--) {
                 var dev = devs[i];
-                var img = iconMap[dev.icontype] || 'dev.png';
                 var loc = new google.maps.LatLng(dev.latitude, dev.longitude);
                 bounds.extend(loc);
                 var opt = {
                     position: loc,
+                    shadow:shadow,
                     map: map,
-                    icon: 'images/' + img
+                    title:'Multiple troopers'
                 };
                 var marker = new google.maps.Marker(opt);
-                markers.push(marker);
+                marker.desc = 'dev invasion';
+                oms.addMarker(marker);
             }
+            
             map.fitBounds(bounds);
-            var clusterOption = {
-                maxZoom: 4,
-                gridSize: 3
-            };
-            var markerCluster = new MarkerClusterer(map, markers, clusterOption);
+
         };
+
+        GoogleMap.prototype.iconWithColor= function(color){
+            return 'http://chart.googleapis.com/chart?chst=d_map_xpin_letter&chld=pin|+|' +color + '|000000|ffff00';
+        }
+
         GoogleMap.prototype.rad2degr = function (rad) {
             return rad * 180 / Math.PI;
         };
