@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Welcome to Power Recruiter Network | Dashboard v.4</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Morris -->
+    <link href="css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> <span>
+                            <img alt="image" class="img-circle" src="img/profile_small.jpg" width="50" />
+                             </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Xun Ding</strong>
+                             </span> <span class="text-muted text-xs block">Engineer <b class="caret"></b></span> </span> </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="#">Profile</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        p+
+                    </div>
+                </li>
+
+
+                <li class="active">
+                    <a href="dashboard_v_1.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li class="active"><a href="dashboard_v_1.html">Dashboard v.1</a></li>
+                        <li><a href="dashboard_v_2.html">Dashboard v.2</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-money"></i> <span class="nav-label">Finance</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrics</span>  </a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-clock-o"></i> <span class="nav-label">Time Sheet</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="#">Quick Entry Time</a></li>
+                        <li><a href="#">Internal Time</a></li>
+                        <li><a href="#">Manual Time</a></li>
+                        <li><a href="#">Time Sheets</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-empire"></i> <span class="nav-label">Admin</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="#">Admin</a></li>
+                        <li><a href="#">Pay Roll Admin</a></li>
+                        <li><a href="#">Interview Admin</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-envelope"></i> <span class="nav-label">Mass Mail</span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="#">Mass Mail</a></li>
+                        <li><a href="agile_board.html">Canned Emails</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-user"></i> <span class="nav-label">Recruiting</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="#">Menu 1</a></li>
+                        <li><a href="#">Menu 2</a></li>
+                        <li><a href="#">Menu 3</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-bell"></i> <span class="nav-label">Alert</span></a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+        </div>
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+                    <span class="m-r-sm text-muted welcome-message">Welcome to Power Recruiter Network.</span>
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> You have 16 messages
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> Something
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="login.html">
+                        <i class="fa fa-sign-out"></i> Log out
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+        </div>
+
+
+            <div class="wrapper wrapper-content">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <span class="label label-success pull-right">Today</span>
+                            <h5>Activities</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <h1 class="no-margins">200</h1>
+                            <small>Total interviews</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <span class="label label-info pull-right">Yesterday</span>
+                            <h5>Activities</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <h1 class="no-margins">80</h1>
+                            <small>Activities</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <span class="label label-info pull-right">Upcoming</span>
+                            <h5>Orders</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <h1 class="no-margins">80</h1>
+                            <small>Activities</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <span class="label pull-right label-danger">Past due</span>
+                            <h5>Activities</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <h1 class="no-margins">80</h1>
+                            <small>job orders</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <span class="label pull-right label-success">Completed</span>
+                            <h5>Activities</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <h1 class="no-margins">0</h1>
+                            <small>job orders</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <span class="label pull-right label-success">Scheduled</span>
+                            <h5>Interviews</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <h1 class="no-margins">2</h1>
+                            <small>interviews</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <span class="label pull-right label-success">Unsubmitted</span>
+                            <h5>job orders</h5>
+                        </div>
+                        <div class="ibox-content">
+                            <h1 class="no-margins">0</h1>
+                            <small>job orders</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="row">
+
+            <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Data table </h5>
+            </div>
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="col-sm-9 m-b-xs">
+                        <div data-toggle="buttons" class="btn-group">
+                            <label class="btn btn-sm btn-white active"> <input type="radio" id="option2" name="options">Month To Date </label>
+                            <label class="btn btn-sm btn-white"> <input type="radio" id="option3" name="options"> Year To Date </label>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="input-group"><input type="text" placeholder="Search" class="input-sm form-control"> <span class="input-group-btn">
+                                            <button type="button" class="btn btn-sm btn-primary"> Go!</button> </span></div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+
+                            <th>Recruiter</th>
+                            <th>Submitted</th>
+                            <th>Job Orders</th>
+                            <th>Interviews</th>
+                            <th>Hires</th>
+                            <th>Reference</th>
+                            <th>Percentage</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td align="left" style="white-space:nowrap;">
+                                <p style="color:#009900"><b>Shantearia Williams</b></p>
+                            </td><td style="white-space:nowrap;">
+                            200
+                        </td><td style="white-space:nowrap;">
+                            35
+                        </td><td style="white-space:nowrap;">
+                            3
+                        </td><td style="white-space:nowrap;">
+                            12
+                        </td><td style="white-space:nowrap;">
+                            135
+                        </td><td style="white-space:nowrap;">
+                            6
+                            %
+                        </td>
+                        </tr>
+                        <tr>
+                            <td align="left" style="white-space:nowrap;">
+                                <p style="color:#009900"><b>Laura Axford</b></p>
+                            </td><td style="white-space:nowrap;">
+                            135
+                        </td><td style="white-space:nowrap;">
+                            52
+                        </td><td style="white-space:nowrap;">
+                            22
+                        </td><td style="white-space:nowrap;">
+                            10
+                        </td><td style="white-space:nowrap;">
+                            723
+                        </td><td style="white-space:nowrap;">
+                            7
+                            %
+                        </td>
+
+                        </tr>
+                        <tr>
+                            <td align="left" style="white-space:nowrap;">
+                                <p style="color:#009900"><b>Shantearia Williams</b></p>
+                            </td><td style="white-space:nowrap;">
+                            200
+                        </td><td style="white-space:nowrap;">
+                            35
+                        </td><td style="white-space:nowrap;">
+                            3
+                        </td><td style="white-space:nowrap;">
+                            12
+                        </td><td style="white-space:nowrap;">
+                            135
+                        </td><td style="white-space:nowrap;">
+                            6
+                            %
+                        </td>
+                        </tr>
+                        <tr>
+                            <td align="left" style="white-space:nowrap;">
+                                <p style="color:#009900"><b>Laura Axford</b></p>
+                            </td><td style="white-space:nowrap;">
+                            135
+                        </td><td style="white-space:nowrap;">
+                            52
+                        </td><td style="white-space:nowrap;">
+                            22
+                        </td><td style="white-space:nowrap;">
+                            10
+                        </td><td style="white-space:nowrap;">
+                            723
+                        </td><td style="white-space:nowrap;">
+                            7
+                            %
+                        </td>
+
+                        </tr>
+                        <tr>
+                            <td align="left" style="white-space:nowrap;">
+                                <p style="color:#009900"><b>Shantearia Williams</b></p>
+                            </td><td style="white-space:nowrap;">
+                            200
+                        </td><td style="white-space:nowrap;">
+                            35
+                        </td><td style="white-space:nowrap;">
+                            3
+                        </td><td style="white-space:nowrap;">
+                            12
+                        </td><td style="white-space:nowrap;">
+                            135
+                        </td><td style="white-space:nowrap;">
+                            6
+                            %
+                        </td>
+                        </tr>
+                        <tr>
+                            <td align="left" style="white-space:nowrap;">
+                                <p style="color:#009900"><b>Laura Axford</b></p>
+                            </td><td style="white-space:nowrap;">
+                            135
+                        </td><td style="white-space:nowrap;">
+                            52
+                        </td><td style="white-space:nowrap;">
+                            22
+                        </td><td style="white-space:nowrap;">
+                            10
+                        </td><td style="white-space:nowrap;">
+                            723
+                        </td><td style="white-space:nowrap;">
+                            7
+                            %
+                        </td>
+
+                        </tr>
+                        <tr>
+                            <td align="left" style="white-space:nowrap;">
+                                <p style="color:#009900"><b>Shantearia Williams</b></p>
+                            </td><td style="white-space:nowrap;">
+                            200
+                        </td><td style="white-space:nowrap;">
+                            35
+                        </td><td style="white-space:nowrap;">
+                            3
+                        </td><td style="white-space:nowrap;">
+                            12
+                        </td><td style="white-space:nowrap;">
+                            135
+                        </td><td style="white-space:nowrap;">
+                            6
+                            %
+                        </td>
+                        </tr>
+                        <tr>
+                            <td align="left" style="white-space:nowrap;">
+                                <p style="color:#009900"><b>Laura Axford</b></p>
+                            </td><td style="white-space:nowrap;">
+                            135
+                        </td><td style="white-space:nowrap;">
+                            52
+                        </td><td style="white-space:nowrap;">
+                            22
+                        </td><td style="white-space:nowrap;">
+                            10
+                        </td><td style="white-space:nowrap;">
+                            723
+                        </td><td style="white-space:nowrap;">
+                            7
+                            %
+                        </td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            </div>
+            </div>
+
+            </div>
+
+
+            </div>
+
+
+            <div class="footer">
+                <div>
+                    <strong>Copyright</strong> Power Recruiter Network &copy; 2016
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Flot -->
+
+    <!-- Peity -->
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="js/demo/peity-demo.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+
+</body>
+</html>
